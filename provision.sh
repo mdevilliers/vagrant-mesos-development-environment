@@ -3,7 +3,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 apt-get update > /dev/null
 
-apt-get -y install make git gcc g++ python-dev libcppunit-dev libunwind7-dev openjdk-7-jdk autoconf autotools-dev libltdl-dev libtool autopoint libcurl4-openssl-dev libsasl2-dev
+apt-get -y install make git gcc g++ python-dev libcppunit-dev openjdk-7-jdk autoconf autotools-dev libltdl-dev libtool autopoint libcurl4-openssl-dev libsasl2-dev
 
 cd /home
 mkdir mesos-dev

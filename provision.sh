@@ -1,22 +1,25 @@
 #!/bin/bash
 export DEBIAN_FRONTEND=noninteractive 
 
+cat >> /etc/apt/sources.list <<EOL
+deb http://binaries.erlang-solutions.com/debian quantal contrib
+deb http://binaries.erlang-solutions.com/debian precise contrib
+deb http://binaries.erlang-solutions.com/debian oneiric contrib
+deb http://binaries.erlang-solutions.com/debian natty contrib
+deb http://binaries.erlang-solutions.com/debian maverick contrib
+deb http://binaries.erlang-solutions.com/debian lucid contrib
+deb http://binaries.erlang-solutions.com/debian wheezy contrib
+deb http://binaries.erlang-solutions.com/debian squeeze contrib
+EOL
+
 apt-get update > /dev/null
 
-apt-get -y install make git gcc g++ python-dev libprotobuf-dev libcppunit-dev libunwind7-dev openjdk-7-jdk autoconf autotools-dev libltdl-dev libtool autopoint libcurl4-openssl-dev libsasl2-dev
+apt-get -y install make git gcc g++ curl 
+apt-get -y install zookeeperd default-jre python-setuptools python-protobuf curl
+apt-get -y --force-yes install esl-erlang
 
-cd /home
-mkdir mesos-dev
-cd mesos-dev
+curl -sSfL http://downloads.mesosphere.io/master/ubuntu/13.10/mesos_0.18.0-rc4_amd64.deb --output /tmp/mesos.deb
 
-git clone git://git.apache.org/mesos.git
+dpkg -i /tmp/mesos.deb
 
-chown -R vagrant:vagrant mesos-dev
-
-cd mesos
-
-./bootstrap
-
-./configure
-
-make
+reboot

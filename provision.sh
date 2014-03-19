@@ -13,13 +13,13 @@ deb http://binaries.erlang-solutions.com/debian squeeze contrib
 EOL
 
 apt-get update > /dev/null
+apt-get upgrade > /dev/null
 
-apt-get -y install make git gcc g++ curl 
-apt-get -y install zookeeperd default-jre python-setuptools python-protobuf curl
+apt-get -y install make git gcc g++ curl  
+apt-get -y install python-dev libcppunit-dev libunwind7-dev autoconf autotools-dev libltdl-dev libtool autopoint libcurl4-openssl-dev libsasl2-dev
+apt-get -y install openjdk-7-jdk zookeeperd default-jre python-setuptools python-protobuf curl
 apt-get -y --force-yes install esl-erlang
 
-curl -sSfL http://downloads.mesosphere.io/master/ubuntu/13.10/mesos_0.18.0-rc4_amd64.deb --output /tmp/mesos.deb
+curl -sSfL http://downloads.mesosphere.io/master/ubuntu/12.10/mesos_0.18.0-rc4_amd64.deb --output /tmp/mesos.deb
 
 dpkg -i /tmp/mesos.deb
-
-reboot

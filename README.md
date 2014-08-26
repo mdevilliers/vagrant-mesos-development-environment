@@ -5,6 +5,13 @@ Simple vagrant script for creating a development environment for mesos developme
 
 Uses the hashicorp/precise64 box (which you may already have)
 
+Urls
+----
+
+Mesos : http://192.168.0.30:5050/
+
+Marathon : http://192.168.0.30:8080/
+
 
 To use
 ------

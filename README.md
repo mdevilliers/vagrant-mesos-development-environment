@@ -3,14 +3,14 @@ vagrant-mesos-development-environment
 
 Simple vagrant script for creating a development environment for mesos development.
 
-Uses the hashicorp/precise64 box (which you may already have)
+Uses the ubuntu/trusty64 box (which you may already have)
 
 Urls
 ----
 
-Mesos : http://192.168.0.30:5050/
+Mesos : http://mesos-dev:5050/
 
-Marathon : http://192.168.0.30:8080/
+Marathon : http://mesos-dev:8080/
 
 
 To use

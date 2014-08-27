@@ -15,12 +15,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.hostmanager.include_offline = true
   config.vm.provision :hostmanager
 
-  config.vm.box = "hashicorp/precise64"
+  config.vm.box = "ubuntu/trusty64"
 
   config.vm.provider :virtualbox do |vb, override|
 	vb.customize ["modifyvm", :id, "--memory", 2048,  "--cpus", "2"]
 
-	override.vm.hostname = "mesos"
+	override.vm.hostname = "mesos-dev"
 	override.vm.network :private_network, ip: "192.168.0.30"
     override.vm.network :forwarded_port, guest: 5050, host: 5050
     override.vm.network :forwarded_port, guest: 8080, host: 8080
